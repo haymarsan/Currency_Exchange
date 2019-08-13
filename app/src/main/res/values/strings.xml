@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Currency Exchange</string>
+    <string name="action_settings">Settings</string>
+    <string name="usd">USD</string>
+    <string name="sgd">SGD</string>
+    <string name="eur">EUR</string>
+    <string name="thb">THB</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+    <string name="buying">Buying</string>
+    <string name="selling">Selling</string>
+    <string name="msg_generic_no_data">No data to display.</string>
+</resources>
