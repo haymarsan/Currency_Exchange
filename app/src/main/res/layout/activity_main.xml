@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".activities.MainActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ll_exchangeTitle">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.hms.currencyexchange.viewholders.pod.SmartRecyclerView
                     android:id="@+id/exchangeRate_recycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>

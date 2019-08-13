@@ -35,11 +35,43 @@ class SmartRecyclerView :  RecyclerView {
      */
 
     private fun checkIfEmpty() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val isEmpty = adapter!!.itemCount == 0
+
+        if (mEmptyView != null){
+            mEmptyView!!.visibility = if (isEmpty) View.VISIBLE else View.INVISIBLE
+            visibility = if (isEmpty) View.INVISIBLE else View.VISIBLE
+        }
     }
 
+
+    override fun setAdapter(adapter: Adapter<*>?) {
+
+        val oldAdapter = getAdapter()
+        oldAdapter?.unregisterAdapterDataObserver(dataObserver)
+
+        super.setAdapter(adapter)
+        adapter?.registerAdapterDataObserver(dataObserver)
+        checkIfEmpty()
+    }
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
     constructor(context: Context, attrs: AttributeSet?, defStyle: Int) : super(context, attrs, defStyle)
 }
+
+
+
+
+//    override fun setAdapter(adapter: RecyclerView.Adapter<*>?) {
+//        val oldAdapter = getAdapter()
+//        oldAdapter?.unregisterAdapterDataObserver(dataObserver)
+//
+//        super.setAdapter(adapter)
+//        adapter?.registerAdapterDataObserver(dataObserver)
+//        checkIfEmpty()
+//    }
+//
+//    fun setEmptyView(emptyView: View) {
+//        mEmptyView = emptyView
+//    }
+
