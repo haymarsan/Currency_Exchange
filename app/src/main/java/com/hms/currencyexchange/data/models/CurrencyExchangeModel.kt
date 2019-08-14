@@ -6,7 +6,7 @@ import com.hms.currencyexchange.data.vos.ExchangeRateVO
 interface CurrencyExchangeModel {
 
 
-    fun getLatestCurrency(): LiveData<MutableList<ExchangeRateVO>>
+    fun getLatestCurrency(): ExchangeRateVO
 
 
 

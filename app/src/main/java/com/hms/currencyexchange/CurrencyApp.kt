@@ -4,7 +4,6 @@ import android.app.Application
 import com.hms.currencyexchange.Utils.Utils
 import com.hms.currencyexchange.data.models.CurrencyExchangeModelImpl
 import com.hms.currencyexchange.network.api.CurrencyApi
-import com.readystatesoftware.chuck.ChuckInterceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -27,7 +26,6 @@ class CurrencyApp : Application() {
     private fun setUpApi(): CurrencyApi {
 
         val client = OkHttpClient.Builder()
-            .addInterceptor(ChuckInterceptor(applicationContext))
             .build()
 
         return Retrofit.Builder()

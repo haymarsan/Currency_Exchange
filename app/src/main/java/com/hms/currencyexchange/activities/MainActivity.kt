@@ -5,12 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
 import com.hms.currencyexchange.R
+import com.hms.currencyexchange.mvp.presenter.HomePresenter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity()
+{
+
+    lateinit var mPresenter: HomePresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        mPresenter = HomePresenter()
+
+        mPresenter.onUIReady(this)
+
+
         //setSupportActionBar(toolbar)
 
 //        fab.setOnClickListener { view ->
